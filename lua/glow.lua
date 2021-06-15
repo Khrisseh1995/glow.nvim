@@ -28,7 +28,7 @@ local function validate(path)
 
   local ext = vim.fn.fnamemodify(path, ":e")
   if ext ~= "md" then
-    wpi.nvim_err_writeln("glow only support markdown files")
+    api.nvim_err_writeln("glow only support markdown files")
     return
   end
 
@@ -38,7 +38,7 @@ end
 local function call_go_command()
   local script = [[
     version="1.4.1"
-    s=$(uname -s | tr "[:upper:]" "[:lower:]")
+    os=$(uname -s | tr "[:upper:]" "[:lower:]")
     arch=$(uname -p)
     [ -z "$arch" ] || [ "$arch" == "unknown" ] && arch="x86_64"
     filename="glow_${version}_${os}_${arch}.tar.gz"
