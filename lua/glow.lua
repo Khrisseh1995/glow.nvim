@@ -151,10 +151,6 @@ function M.download_glow()
     vim.fn.termopen(string.format("glow %s", vim.fn.shellescape(path)))
   end
 
-function M.test()
-  return 'hello'
-end
-
 function M.create_markdown_window(file)
   -- Split window to the right hand side of current window
   vim.cmd('set splitright')
